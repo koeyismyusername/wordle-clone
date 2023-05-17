@@ -1,0 +1,7 @@
+#timer {
+  color: var(--color-content-1);
+  font-size: 40px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
