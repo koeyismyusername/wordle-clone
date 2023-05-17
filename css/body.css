@@ -5,7 +5,7 @@
   --color-content-2: rgb(202, 202, 202);
 }
 body {
-  min-width: 480px;
+  min-width: 800px;
   background-color: var(--color-back-1);
 }
 a {
