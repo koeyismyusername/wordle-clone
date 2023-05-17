@@ -26,8 +26,8 @@ footer .key {
   align-items: center;
   margin: 2px;
 }
-footer .key.enter,
-footer .key.backspace {
+footer .key.Enter,
+footer .key.Backspace {
   width: 80px;
 }
 footer .key:hover {

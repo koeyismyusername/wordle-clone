@@ -1,5 +1,5 @@
 main > .inner {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 main > .inner .row {
   display: flex;
@@ -7,8 +7,8 @@ main > .inner .row {
   align-items: center;
 }
 main > .inner .column {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   margin: 5px;
   border: 2px solid var(--color-back-2);
   display: flex;
@@ -16,4 +16,15 @@ main > .inner .column {
   align-items: center;
   color: var(--color-content-1);
   font-size: 40px;
+}
+main > .inner .column.filled {
+  border: 2px solid var(--color-content-1);
+}
+main > .inner .column.green {
+  border: 2px solid var(--color-green);
+  background-color: var(--color-green);
+}
+main > .inner .column.yellow {
+  border: 2px solid var(--color-yellow);
+  background-color: var(--color-yellow);
 }

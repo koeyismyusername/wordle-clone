@@ -3,6 +3,8 @@
   --color-back-2: gray;
   --color-content-1: white;
   --color-content-2: rgb(202, 202, 202);
+  --color-green: rgb(62, 145, 62);
+  --color-yellow: rgb(211, 211, 56);
 }
 body {
   min-width: 800px;
