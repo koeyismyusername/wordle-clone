@@ -6,6 +6,7 @@
 }
 body {
   min-width: 480px;
+  background-color: var(--color-back-1);
 }
 a {
   text-decoration: 0;
