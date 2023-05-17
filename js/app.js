@@ -5,7 +5,6 @@ const chars = "QWERTYUIOPASDFGHJKLZXCVBNM";
 const answer = createRandomWord();
 // console.log(answer);
 
-const keys
 function createRandomWord() {
   let result = "";
   for (let i = 0; i < 5; ++i) {
