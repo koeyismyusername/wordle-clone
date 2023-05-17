@@ -1,0 +1,12 @@
+:root {
+  --color-back-1: black;
+  --color-back-2: gray;
+  --color-content-1: white;
+  --color-content-2: rgb(202, 202, 202);
+}
+body {
+  min-width: 480px;
+}
+a {
+  text-decoration: 0;
+}

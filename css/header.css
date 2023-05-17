@@ -1,0 +1,40 @@
+header {
+  background-color: var(--color-back-1);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+header a {
+  color: var(--color-content-1);
+  display: block;
+}
+header a:active {
+  color: var(--color-content-2);
+}
+header > .left-menu {
+  position: absolute;
+  left: 0;
+  margin-left: 10px;
+  padding: 10px;
+}
+header .icon {
+  font-size: 30px;
+}
+header > .title {
+  font-size: 60px;
+  font-family: "Roboto Slab", serif;
+}
+header > .right-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
+}
+header > .right-icons > .icon {
+  margin: 10px 5px;
+}
