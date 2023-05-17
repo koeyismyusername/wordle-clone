@@ -5,8 +5,8 @@ header {
   align-items: center;
   position: sticky;
   top: 0;
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
+  border-top: 1px solid var(--color-back-2);
+  border-bottom: 1px solid var(--color-back-2);
 }
 header a {
   color: var(--color-content-1);
