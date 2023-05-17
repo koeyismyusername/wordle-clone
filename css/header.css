@@ -26,7 +26,6 @@ header .icon {
 }
 header > .title {
   font-size: 60px;
-  font-family: "Roboto Slab", serif;
 }
 header > .right-icons {
   display: flex;
