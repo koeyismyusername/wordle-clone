@@ -115,6 +115,8 @@ function checkResult() {
     result += child.textContent;
   }
 
+  let count = 0;
+
   for (let i = 0; i < MAX_COLUMN; ++i) {
     let mainEl = innerEl.children[rowIndex].children[i];
     let footerEl = document.querySelector(`footer .key[data-key=${result[i]}]`);
@@ -123,6 +125,7 @@ function checkResult() {
     if (answerCopy[i] === result[i]) {
       mainEl.classList.add(GREEN);
       footerEl.classList.add(GREEN);
+      ++count;
     }
     // 자리는 다르지만 문자가 포함되면 옐로우
     else if (answerCopy.includes(result[i])) {
@@ -134,6 +137,11 @@ function checkResult() {
       mainEl.classList.add(RED);
       footerEl.classList.add(RED);
     }
+  }
+
+  // 모두 맞췄다면
+  if (count === 5) {
+    gameOver();
   }
 }
 
