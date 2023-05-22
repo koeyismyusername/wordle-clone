@@ -8,6 +8,32 @@ function createRandomWord() {
   return result;
 }
 
+// 텍스트 입력 처리
+function handleTextInput(text) {
+  // 알파벳 입력 시
+  if (CHARS.includes(text)) {
+    setTextToTarget(text);
+  }
+  // 엔터 입력 시
+  else if (text === "ENTER") {
+    if (rowIsFulled()) {
+      // 정답이 맞는지 검사하는 로직 여기에
+      checkResult();
+
+      if (lastRowIsFulled()) {
+        // 게임 종료하는 로직 여기에
+        return;
+      }
+
+      moveTargetToNextRow();
+    }
+  }
+  // 백스페이스 입력 시
+  else if (text === "BACKSPACE") {
+    removeTextInTarget();
+  }
+}
+
 // 타겟에 텍스트 입력
 function setTextToTarget(text) {
   if (target.classList.contains(FILLED)) moveTargetToNextColumn();

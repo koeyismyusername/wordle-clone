@@ -6,36 +6,18 @@ let target = innerEl.children[rowIndex].children[columnIndex];
 
 // 키보드 입력 이벤트 등록
 document.addEventListener("keydown", function (event) {
-  const input = event.key.toUpperCase();
-  // 알파벳 입력 시
-  if (CHARS.includes(input)) {
-    setTextToTarget(input);
-  }
-  // 엔터 입력 시
-  else if (input === "ENTER") {
-    if (rowIsFulled()) {
-      // 정답이 맞는지 검사하는 로직 여기에
-      checkResult();
-
-      if (lastRowIsFulled()) {
-        // 게임 종료하는 로직 여기에
-        return;
-      }
-
-      moveTargetToNextRow();
-    }
-  }
-  // 백스페이스 입력 시
-  else if (input === "BACKSPACE") {
-    removeTextInTarget();
-  }
+  const text = event.key.toUpperCase();
+  handleTextInput(text);
 });
 
-// 마우스 클릭 이벤트 처리
+// 마우스 클릭 이벤트 등록
 let els = document.querySelectorAll("footer .key");
 els.forEach(function (el) {
   let letter = el.dataset.key;
-  el.addEventListener("click", function () {});
+  // 해당 요소가 클릭됐을 때 글자 입력
+  el.addEventListener("click", function () {
+    handleTextInput(letter);
+  });
 });
 
 target.addEventListener("click", function (event) {});
