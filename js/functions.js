@@ -8,6 +8,18 @@ function createRandomWord() {
   return result;
 }
 
+// 키보드 입력 처리
+function handleKeyboardInput(event) {
+  const text = event.key.toUpperCase();
+  handleTextInput(text);
+}
+
+// 마우스 입력 처리
+function handleMouseInput(event) {
+  console.log(event.target.dataset.key);
+  handleTextInput(event.target.dataset.key);
+}
+
 // 텍스트 입력 처리
 function handleTextInput(text) {
   // 알파벳 입력 시
@@ -127,5 +139,15 @@ function checkResult() {
 
 // 게임 종료
 function gameOver() {
+  // 타이머 종료
   stopTimer();
+
+  // 키보드 입력 이벤트 제거
+  document.removeEventListener("keydown", handleKeyboardInput);
+
+  // 마우스 입력 이벤트 제거
+  let els = document.querySelectorAll("footer .key");
+  els.forEach(function (el) {
+    el.removeEventListener("click", handleMouseInput);
+  });
 }
