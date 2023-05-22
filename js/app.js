@@ -1,9 +1,3 @@
-const MAX_ROW = 6;
-const MAX_COLUMN = 5;
-const FILLED = "filled";
-const YELLOW = "yellow";
-const GREEN = "green";
-
 // 첫 타겟 설정
 let rowIndex = 0;
 let columnIndex = 0;
