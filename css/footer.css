@@ -26,9 +26,12 @@ footer .key {
   align-items: center;
   margin: 2px;
 }
-footer .key.Enter,
-footer .key.Backspace {
-  width: 80px;
+footer .key[data-key="Enter"],
+footer .key[data-key="Backspace"] {
+  width: 50px;
+}
+footer .key[data-key="Enter"] {
+  font-size: 0.7em;
 }
 footer .key:hover {
   cursor: pointer;

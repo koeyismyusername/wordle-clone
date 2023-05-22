@@ -34,7 +34,7 @@ document.addEventListener("keydown", function (event) {
 // 마우스 클릭 이벤트 처리
 let els = document.querySelectorAll("footer .key");
 els.forEach(function (el) {
-  console.log(el.textContent);
+  console.log(el.dataset.key);
 });
 
 target.addEventListener("click", function (event) {});
