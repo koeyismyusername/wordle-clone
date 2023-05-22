@@ -8,7 +8,7 @@ let target = innerEl.children[rowIndex].children[columnIndex];
 document.addEventListener("keydown", function (event) {
   const input = event.key.toUpperCase();
   // 알파벳 입력 시
-  if (chars.includes(input)) {
+  if (CHARS.includes(input)) {
     setTextToTarget(input);
   }
   // 엔터 입력 시
@@ -84,7 +84,7 @@ function removeTextInTarget() {
 }
 
 function checkResult() {
-  let answerCopy = answer.slice();
+  let answerCopy = ANSWER.slice();
 
   let result = "";
   for (let child of innerEl.children[rowIndex].children) {
@@ -110,7 +110,7 @@ function checkResult() {
       if (answerCopy[j] === result[i]) {
         element.classList.add(YELLOW);
         answerCopy[j] = "*";
-        console.log(answer);
+        console.log(ANSWER);
         console.log(answerCopy);
         break;
       }
