@@ -16,7 +16,6 @@ function handleKeyboardInput(event) {
 
 // 마우스 입력 처리
 function handleMouseInput(event) {
-  console.log(event.target.dataset.key);
   handleTextInput(event.target.dataset.key);
 }
 
