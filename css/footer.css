@@ -36,12 +36,12 @@ footer .key[data-key="ENTER"] {
 footer .key:hover {
   cursor: pointer;
 }
-footer .key.green {
-  background-color: var(--color-green);
+footer .key.red {
+  background-color: var(--color-red);
 }
 footer .key.yellow {
   background-color: var(--color-yellow);
 }
-footer .key.red {
-  background-color: var(--color-red);
+footer .key.green {
+  background-color: var(--color-green);
 }
