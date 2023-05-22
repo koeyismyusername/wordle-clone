@@ -22,6 +22,7 @@ function handleTextInput(text) {
 
       if (lastRowIsFulled()) {
         // 게임 종료하는 로직 여기에
+        gameOver();
         return;
       }
 
@@ -122,4 +123,9 @@ function checkResult() {
       footerEl.classList.add(RED);
     }
   }
+}
+
+// 게임 종료
+function gameOver() {
+  stopTimer();
 }

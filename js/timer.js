@@ -15,5 +15,12 @@ TimeManager.timerID = setInterval(function () {
     const minutes = timer.getMinutes().toString().padStart(2, "0");
     const seconds = timer.getSeconds().toString().padStart(2, "0");
     timerEl.innerText = `${minutes}:${seconds}`;
+  } else {
+    clearInterval(TimeManager.timerID);
   }
 }, 1000);
+
+// 타이머 이벤트 종료 함수
+function stopTimer() {
+  TimeManager.isPaused = true;
+}
