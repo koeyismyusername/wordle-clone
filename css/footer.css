@@ -26,13 +26,22 @@ footer .key {
   align-items: center;
   margin: 2px;
 }
-footer .key[data-key="Enter"],
-footer .key[data-key="Backspace"] {
+footer .key[data-key="ENTER"],
+footer .key[data-key="BACKSPACE"] {
   width: 50px;
 }
-footer .key[data-key="Enter"] {
+footer .key[data-key="ENTER"] {
   font-size: 0.7em;
 }
 footer .key:hover {
   cursor: pointer;
+}
+footer .key.green {
+  background-color: var(--color-green);
+}
+footer .key.yellow {
+  background-color: var(--color-yellow);
+}
+footer .key.red {
+  background-color: var(--color-red);
 }

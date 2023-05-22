@@ -76,29 +76,24 @@ function checkResult() {
     result += child.textContent;
   }
 
-  // 그린 비교
   for (let i = 0; i < MAX_COLUMN; ++i) {
+    let mainEl = innerEl.children[rowIndex].children[i];
+    let footerEl = document.querySelector(`footer .key[data-key=${result[i]}]`);
+
+    // 자리와 문자가 같으면 그린
     if (answerCopy[i] === result[i]) {
-      innerEl.children[rowIndex].children[i].classList.add(GREEN);
+      mainEl.classList.add(GREEN);
+      footerEl.classList.add(GREEN);
     }
-  }
-
-  // 옐로우 비교
-  for (let i = 0; i < MAX_COLUMN; ++i) {
-    const element = innerEl.children[rowIndex].children[i];
-
-    if (element.classList.contains(GREEN)) {
-      continue;
+    // 자리는 다르지만 문자가 포함되면 옐로우
+    else if (answerCopy.includes(result[i])) {
+      mainEl.classList.add(YELLOW);
+      footerEl.classList.add(YELLOW);
     }
-
-    for (let j = 0; j < MAX_COLUMN; ++j) {
-      if (answerCopy[j] === result[i]) {
-        element.classList.add(YELLOW);
-        answerCopy[j] = "*";
-        console.log(ANSWER);
-        console.log(answerCopy);
-        break;
-      }
+    // 나머지 레드
+    else {
+      mainEl.classList.add(RED);
+      footerEl.classList.add(RED);
     }
   }
 }

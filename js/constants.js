@@ -13,3 +13,4 @@ const MAX_COLUMN = 5;
 const FILLED = "filled";
 const YELLOW = "yellow";
 const GREEN = "green";
+const RED = "red";
