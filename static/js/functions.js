@@ -107,7 +107,6 @@ async function checkResult() {
   let count = 0;
 
   for (let i = 0; i < MAX_COLUMN; ++i) {
-    console.log(`row: ${rowIndex}, column: ${columnIndex}`);
     let mainEl = innerEl.children[rowIndex].children[i];
     let footerEl = document.querySelector(`footer .key[data-key=${result[i]}]`);
 
