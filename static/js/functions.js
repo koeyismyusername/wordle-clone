@@ -97,10 +97,7 @@ function removeTextInTarget() {
 async function checkResult() {
   const response = await fetch("/answer");
   const obj = await response.json();
-  const ANSWER = await obj.answer;
-  console.log(ANSWER);
-
-  let answerCopy = ANSWER.slice();
+  const answer = await obj.answer;
 
   let result = "";
   for (let child of innerEl.children[rowIndex].children) {
@@ -115,13 +112,13 @@ async function checkResult() {
     let footerEl = document.querySelector(`footer .key[data-key=${result[i]}]`);
 
     // 자리와 문자가 같으면 그린
-    if (answerCopy[i] === result[i]) {
+    if (answer[i] === result[i]) {
       mainEl.classList.add(GREEN);
       footerEl.classList.add(GREEN);
       ++count;
     }
     // 자리는 다르지만 문자가 포함되면 옐로우
-    else if (answerCopy.includes(result[i])) {
+    else if (answer.includes(result[i])) {
       mainEl.classList.add(YELLOW);
       footerEl.classList.add(YELLOW);
     }
