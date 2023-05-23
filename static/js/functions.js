@@ -1,13 +1,3 @@
-// 무작위로 5글자 단어를 생성하는 함수
-function createRandomWord() {
-  let result = "";
-  for (let i = 0; i < 5; ++i) {
-    const index = Math.floor(Math.random() * 26);
-    result += CHARS[index];
-  }
-  return result;
-}
-
 // 키보드 입력 처리
 function handleKeyboardInput(event) {
   const text = event.key.toUpperCase();
@@ -29,15 +19,13 @@ function handleTextInput(text) {
   else if (text === "ENTER") {
     if (rowIsFulled()) {
       // 정답이 맞는지 검사하는 로직 여기에
-      checkResult();
+      checkResult().then(moveTargetToNextRow);
 
       if (lastRowIsFulled()) {
         // 게임 종료하는 로직 여기에
         gameOver();
         return;
       }
-
-      moveTargetToNextRow();
     }
   }
   // 백스페이스 입력 시
@@ -106,7 +94,12 @@ function removeTextInTarget() {
 }
 
 // 정답 확인하기
-function checkResult() {
+async function checkResult() {
+  const response = await fetch("/answer");
+  const obj = await response.json();
+  const ANSWER = await obj.answer;
+  console.log(ANSWER);
+
   let answerCopy = ANSWER.slice();
 
   let result = "";
@@ -117,6 +110,7 @@ function checkResult() {
   let count = 0;
 
   for (let i = 0; i < MAX_COLUMN; ++i) {
+    console.log(`row: ${rowIndex}, column: ${columnIndex}`);
     let mainEl = innerEl.children[rowIndex].children[i];
     let footerEl = document.querySelector(`footer .key[data-key=${result[i]}]`);
 
