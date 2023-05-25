@@ -19,10 +19,11 @@
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/timer.css" />
     <!-- js -->
-    <script defer src="js/timer.js"></script>
-    <script defer src="js/functions.js"></script>
     <script defer src="js/constants.js"></script>
-    <script defer src="js/main.js"></script>
+    <script defer src="js/timer.js"></script>
+    <script type="module" defer src="js/target.js"></script>
+    <script type="module" defer src="js/game_manager.js"></script>
+    <script type="module" defer src="js/main.js"></script>
   </head>
   <body>
     <!-- 상단 메뉴바 -->
@@ -127,7 +128,9 @@
         <div class="key" data-key="N">N</div>
         <div class="key" data-key="M">M</div>
         <div class="key" data-key="BACKSPACE">
-          <span class="material-icons-outlined"> backspace </span>
+          <span class="material-icons-outlined" data-key="BACKSPACE">
+            backspace
+          </span>
         </div>
       </div>
     </footer>

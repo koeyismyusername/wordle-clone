@@ -20,7 +20,7 @@ def createAnswer():
       
     if count == 5: break
     
-  answer = ''.join(result).replace(' ', '')
+  answer = ''.join(result)
   
   return answer
 
@@ -30,6 +30,6 @@ ANSWER = createAnswer()
 
 @app.get("/answer")
 def getAnswer():
-  return {"answer": ANSWER}
+  return ANSWER
 
 app.mount("/", StaticFiles(directory="static", html=True), name="static")
